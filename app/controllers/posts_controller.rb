@@ -20,8 +20,10 @@ class PostsController < ApplicationController
   #custom setter for nested category creation
   #automatically called when line 16 above is called
   def categories_attributes=(category_hashes)
+    #hash looks like this {"0"={name:"New Category"}, "1"={name:"Other New Category"}}
     #for every value in the categoery_attributes hash...
     category_hashes.value.each do |i,category_attr|
+      #each will be this: {name:"New Category"} - a hash that can be used to create a new cateogry
       #find or create a category by that attribute (will pass key and value in?)
       category=Category.find_or_create_by(name: category_attr[:name]))
       #link it up manually by shoveling it into self cateogires
