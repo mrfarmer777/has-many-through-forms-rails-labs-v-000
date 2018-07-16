@@ -19,9 +19,9 @@
 
 <h4>Add a New Comment: </h4>
 
-<%= form_for :comment do |f|%>
-  <%=f.collection_select :user_id, User.all, :id, :username%>
-  <%=f.text_field :content%>
+<%= form_for :comment do |f|%><br />
+  User: <%=f.collection_select :user_id, User.all, :id, :username%><br />
+  Content:<%=f.text_field :content%>
   <%=f.submit%>
 <%end%>
 
