@@ -20,7 +20,7 @@
 <h4>Add a New Comment: </h4>
 
 <%= form_for :comment do |f|%>
-  <%=f.select_tag :user_id, options_from_collection_for_select(User.all, :id, :username)%>
+  <%=f.select_field :user_id, options_from_collection_for_select(User.all, :id, :username)%>
   <%=f.text_field :content%>
   <%=f.submit%>
 <%end%>
