@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    
+
   end
 
   def create
@@ -18,9 +18,13 @@ class PostsController < ApplicationController
   end
 
   #custom setter for nested category creation
+  #automatically called when line 16 above is called
   def categories_attributes=(category_attributes)
+    #for every value in the categoery_attributes hash...
     category_attributes.value.each do |attribute|
+      #find or create a category by that attribute (will pass key and value in?)
       category=Category.find_or_create_by(attribute)
+      #link it up manually by shoveling it into self cateogires
       self.categories<<category
     end
   end
