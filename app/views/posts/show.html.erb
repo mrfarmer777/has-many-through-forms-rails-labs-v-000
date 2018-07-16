@@ -1,1 +1,18 @@
+<h1><%=@post.title%></h1>
+<p>
+  <%=@post.content%>
+</p>
 
+<h4>Comments:</h4>
+<table>
+  <% @post.comments.each do |comment|%>
+    <tr>
+      <td>
+        <%=link_to comment.user.username, user_path(comment.user)%>
+      </td>
+      <td>
+        <%=comment.content%>
+      </td>
+    </tr>
+  <%end%>
+</table>
