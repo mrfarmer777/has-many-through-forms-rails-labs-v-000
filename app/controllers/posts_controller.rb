@@ -23,7 +23,7 @@ class PostsController < ApplicationController
     #for every value in the categoery_attributes hash...
     category_hashes.value.each do |i,category_attr|
       #find or create a category by that attribute (will pass key and value in?)
-      category=Category.find_or_create_by(i,category_attr)
+      category=Category.find_or_create_by(name: category_attr[:name]))
       #link it up manually by shoveling it into self cateogires
       self.categories<<category
     end
