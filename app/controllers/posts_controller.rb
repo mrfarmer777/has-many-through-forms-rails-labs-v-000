@@ -29,6 +29,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def comments_attributes=(attr)
+    @comment=Comment.new(attr)
+    self.comments<<@comment
+    @comment.save
+  end
+
   private
 
   def post_params
