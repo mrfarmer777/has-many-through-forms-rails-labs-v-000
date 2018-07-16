@@ -31,6 +31,7 @@ class PostsController < ApplicationController
 
   def comments_attributes=(attr)
     @comment=Comment.new(attr)
+    @comment.post_id=self.id
     self.comments<<@comment
     @comment.save
   end
