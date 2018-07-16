@@ -21,7 +21,10 @@
 
 <%= form_for :comment_attributes do |f|%><br />
   User: <%=f.collection_select :user_id, User.all, :id, :username%><br />
+  New User: <%=f.text_field :username%>
+  New User Email: <%=f.text_field :email%>
   Content:<%=f.text_field :content%><br />
+  
   <%=f.submit%>
 <%end%>
 
