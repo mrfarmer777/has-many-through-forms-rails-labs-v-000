@@ -21,9 +21,9 @@ class PostsController < ApplicationController
   #automatically called when line 16 above is called
   def categories_attributes=(category_hashes)
     #for every value in the categoery_attributes hash...
-    category_hashes.value.each do |hash|
+    category_hashes.value.each do |i,category_attr|
       #find or create a category by that attribute (will pass key and value in?)
-      category=Category.find_or_create_by(hash)
+      category=Category.find_or_create_by(i,category_attr)
       #link it up manually by shoveling it into self cateogires
       self.categories<<category
     end
