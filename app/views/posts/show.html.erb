@@ -3,6 +3,16 @@
   <%=@post.content%>
 </p>
 
+<p>
+  <ul>
+    <%@post.categories.each do |cat|%>
+      <li>
+        <%=cat.name%>
+      </li>
+  </ul>
+  
+</p>
+
 <h4>Comments:</h4>
 <table>
   <% @post.comments.each do |comment|%>
