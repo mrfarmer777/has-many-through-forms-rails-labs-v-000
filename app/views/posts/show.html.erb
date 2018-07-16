@@ -16,3 +16,15 @@
     </tr>
   <%end%>
 </table>
+
+<h4>Add a New Comment: </h4>
+
+
+<h4>Active Users:</h4>
+<ul>
+  <% @post.users.each do |user|%>
+    <li>
+      <%=user.username%>
+    </li>
+</ul>
+  
