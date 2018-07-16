@@ -1,10 +1,11 @@
 <%= form_for @post do |f|%>
-  <%= f.text_field :title %>
-  <%= f.text_field :content %>
+  Post Title: <%= f.text_field :title %>
+  Post Content: <%= f.text_field :content %>
   <!--Creates a series of checkboxes for each readily-available category to link to a post -->
-  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+  Categories: <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
 
   <!--Creates all fields necessary to instantiate a new category and link it directly to this post -->
+  <%=f.label "New Category"%>
   <%= f.fields_for :categories, @post.categories.build do |categories_fields|%>
     <%= categories_fields.text_field :name %>
   <%end%>
