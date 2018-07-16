@@ -6,7 +6,7 @@
 
   <!--Creates all fields necessary to instantiate a new category and link it directly to this post -->
   <%= f.fields_for :categories, @post.categories.build do |categories_fields|%>
-    <% = categories_fields.text_field :name %>
+    <%= categories_fields.text_field :name %>
   <%end%>
   <% f.submit%>
 <%end%>
