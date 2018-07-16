@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     category_hashes.value.each do |i,category_attr|
       #each will be this: {name:"New Category"} - a hash that can be used to create a new cateogry
       #find or create a category by that attribute (will pass key and value in?)
-      category=Category.find_or_create_by(name: category_attr[:name]))
+      category=Category.find_or_create_by(name: category_attr[:name])
 
       #make a new post_category instance using the category
       #will make a new post_category with post_id of self.id and category_id of category.id
