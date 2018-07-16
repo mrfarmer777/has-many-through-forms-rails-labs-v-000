@@ -30,7 +30,7 @@
 
 <h4>Add a New Comment: </h4>
 
-<%= form_for :comment_attributes do |f|%><br />
+<%= form_for :comment, url:comments_path, method: :post do |f|%><br />
   User: <%=f.collection_select :user_id, User.all, :id, :username%><br />
   New User: <%=f.text_field :username%>
   New User Email: <%=f.text_field :email%>
