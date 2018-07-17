@@ -31,7 +31,7 @@
 <h4>Add a New Comment: </h4>
 
 <%=form_for @comment, url:"/comments", method: "POST" do |f|%>
-  <%=f.text_field :content%>
+  Content: <%=f.text_field :content%>
 
   <%=f.submit %>
 <%end%>
