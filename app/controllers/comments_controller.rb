@@ -5,12 +5,13 @@ class CommentsController < ApplicationController
   def create
     #raise params.inspect
     comment = Comment.create(comment_params)
-    raise comment.user.inspect
+    
     redirect_to post_path(comment.post)
   end
 
   def user_attributes=(user_hash)
     if !user_hash[:username].blank?
+      raise user_hash[:username]
       user=User.find_or_create_by(username:user_hash[:username])
       self.user_id=user.id
     end
