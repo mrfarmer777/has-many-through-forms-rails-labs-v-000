@@ -6,8 +6,10 @@ class CommentsController < ApplicationController
   end
 
   def user_attributes=(user_hash)
-    user=User.find_or_create_by(username:user_hash[:username])
-    self.user_id=user.id
+    if user_hash[:username].present?
+      user=User.find_or_create_by(username:user_hash[:username])
+      self.user_id=user.id
+    end
   end
 
   private
