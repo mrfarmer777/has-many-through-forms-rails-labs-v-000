@@ -43,10 +43,7 @@
 
 <h4>Active Users:</h4>
 <ul>
-  <% @post.users.uniq.each do |us|%>
-    <li>
-      <%=link_to us.username, user_path(us) %>
-    </li>
+  <% @post.users.uniq.each do |us|%> 
 
   <%end%>
 </ul>
