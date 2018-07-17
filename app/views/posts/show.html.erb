@@ -45,7 +45,7 @@
 <ul>
   <% @post.users.uniq.each do |u|%>
     <li>
-      <%=link_to user.username, users_path(u) %>
+      <%=link_to user.username, user_path(u) %>
     </li>
 
   <%end%>
