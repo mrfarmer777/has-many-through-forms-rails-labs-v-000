@@ -1,3 +1,5 @@
+require 'pry'
+
 class CommentsController < ApplicationController
 
   def create
@@ -7,10 +9,11 @@ class CommentsController < ApplicationController
   end
 
   def user_attributes=(user_hash)
-    #if !user_hash[:username].blank?
-    #  user=User.find_or_create_by(username:user_hash[:username])
-    #  self.user_id=user.id
-    #end
+    if !user_hash[:username].blank?
+      binding.pry
+      user=User.find_or_create_by(username:user_hash[:username])
+      self.user_id=user.id
+    end
   end
 
   private
