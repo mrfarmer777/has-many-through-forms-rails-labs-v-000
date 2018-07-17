@@ -45,7 +45,7 @@
 <ul>
   <% @post.users.uniq.each do |us|%>
     <li>
-      <%=us.id%>
+      <%=us.path%>
     </li>
   <%end%>
 </ul>
