@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
   def user_attributes=(user_hash)
     binding.pry
     if !user_hash[:username].blank?
-      
+
       user=User.find_or_create_by(username:user_hash[:username])
       self.user_id=user.id
     end
