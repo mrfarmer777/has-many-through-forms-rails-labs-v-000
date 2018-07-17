@@ -31,15 +31,16 @@
 <h4>Add a New Comment: </h4>
 
 <form action="/comments" method="POST">
-  <input type="text" name="content" id="comment_content" />
+  Content: <input type="text" name="content" id="comment_content" />
   <select name="user_id">
     <% for User.all.each do |user|%>
       <option value="<%=user.id%>"><%=user.username%></option>
     <%end%>
-    
+  <input type="submit" id="submit" value="Submit Comment" />
+
   </select>
-  
-    
+
+
 </form>
 <%end%>
 
