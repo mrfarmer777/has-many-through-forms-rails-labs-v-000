@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     redirect_to post_path(comment.post)
   end
 
-  def user_attributes=(user_hash)
+  def users_attributes=(user_hash)
     raise user_hash.inspect
     if user_hash['username'].present?
       user=User.find_or_create_by(username:user_hash[:username])
