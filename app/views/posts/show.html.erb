@@ -19,7 +19,7 @@
   <% @post.comments.each do |comment|%>
     <tr>
       <td>
-        <%=comment.user.username%> says: <%=comment.content%>
+        <%=comment.user.username unless comment.user.nil?%> says: <%=comment.content%>
       </td>
 
 
