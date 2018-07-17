@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
 
   def user_attributes=(user_hash)
     if user_hash['username'].present?
+      raise user_hash.inspect
       user=User.find_or_create_by(username:user_hash[:username])
       self.user_id=user.id
     end
