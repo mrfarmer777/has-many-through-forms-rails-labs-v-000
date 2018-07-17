@@ -19,7 +19,7 @@
   <% @post.comments.each do |comment|%>
     <tr>
       <td>
-        <%=comment.user.username%> says: <%=comment.content%>
+        <%=link_to comment.user.username, user_path(comment.user) unless comment.user.nil?%> says: <%=comment.content%>
       </td>
 
 
@@ -45,7 +45,7 @@
 <ul>
   <% @post.users.uniq.each do |user|%>
     <li>
-      <%=link_to user.username, user_path(user)%>
+      <%=user.username%>
     </li>
 
   <%end%>
