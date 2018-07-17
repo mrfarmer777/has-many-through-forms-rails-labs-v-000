@@ -31,7 +31,7 @@
 <h4>Add a New Comment: </h4>
 
 <%=form_for :comment, url:"/comments", method: "POST" do |f|%>
-  Create New User:<%=f.fields_for :user, @post.users.build do |user_fields|%>
+  Create New User:<%=f.fields_for :user_attributes, @post.users.build do |user_fields|%>
     <%user_fields.text_field :username%>
   <%end%>
   User: <%=f.collection_select :user_id, User.all, :id, :username, :prompt=>true%>
