@@ -45,7 +45,7 @@
 <ul>
   <% @post.users.each do |us|%>
     <li>
-      <%=us.username%> <%=user_path(us)%>
+      <a href="/users/<%=us.id%>"><%us.username%></a>
     </li>
   <%end%>
 </ul>
