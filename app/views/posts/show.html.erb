@@ -19,7 +19,7 @@
   <% @post.comments.each do |comment|%>
     <tr>
       <td>
-        <%=link_to comment.user.username, user_path(comment.user) %>
+        <%=link_to comment.user.username, user_path(comment.user) unless comment.user.nil?%>
       </td>
       <td>
         <%=comment.content%>
