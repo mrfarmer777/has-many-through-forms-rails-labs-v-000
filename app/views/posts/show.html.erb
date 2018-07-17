@@ -34,7 +34,7 @@
   Create New User:<%=f.fields_for :user, @post.users.build do |user_fields|%>
     <%user_fields.text_field :username%>
   <%end%>
-  User: <%=f.collection_select :user_id, User.all, :id, :username%>
+  User: <%=f.collection_select :user_id, User.all, :id, :username, :include_blank => ""%>
   Content: <%=f.text_field :content%>
   <%=f.hidden_field :post_id, :value=> @post.id%>
   <%=f.submit %>
