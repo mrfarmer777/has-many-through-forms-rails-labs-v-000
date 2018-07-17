@@ -7,7 +7,6 @@
   Categories: <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %> <br />
 
   <!--Creates all fields necessary to instantiate a new category and link it directly to this post -->
-
   New Category: <input type="text" id="post_categories_attributes_0_name" name="post[categories_attributes][0][name]" />
   <%=f.submit%>
 <%end%>
