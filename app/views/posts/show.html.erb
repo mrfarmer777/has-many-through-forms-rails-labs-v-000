@@ -31,6 +31,7 @@
 <h4>Add a New Comment: </h4>
 
 <%=form_for :comment, url:"/comments", method: "POST" do |f|%>
+  User: <%=f.collection_select :user_id, User.all, :id, :username%>
   Content: <%=f.text_field :content%>
   <%=f.hidden_field :post_id, :value=> @post.id%>
   <%=f.submit %>
