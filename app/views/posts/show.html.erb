@@ -43,9 +43,9 @@
 
 <h4>Active Users:</h4>
 <ul>
-  <% @post.users.uniq.each do |u|%>
+  <% @post.users.uniq.each do |us|%>
     <li>
-      <%=link_to u.username, user_path(u) %>
+      <%=link_to us.username, user_path(us) %>
     </li>
 
   <%end%>
