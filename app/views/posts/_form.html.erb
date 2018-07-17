@@ -1,1 +1,12 @@
+<%= form_for @post do |f|%>
+  Post Title: <%= f.text_field :title %> <br />
+  Post Content: <%= f.text_area :content %> <br />
+  <!--Creates a series of checkboxes for each readily-available category to link to a post -->
+  <!--the :id will be the name of the checkbox that gets passed to the params for assignment -->
+  <!-- the :name is what will be shown (placed in the value of the -->
+  Categories: <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %> <br />
 
+  <!--Creates all fields necessary to instantiate a new category and link it directly to this post -->
+  New Category: <input type="text" id="post_categories_attributes_0_name" name="post[categories_attributes][0][name]" />
+  <%=f.submit%>
+<%end%>
