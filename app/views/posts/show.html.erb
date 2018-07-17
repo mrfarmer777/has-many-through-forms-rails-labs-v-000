@@ -32,7 +32,7 @@
 
 <%=form_for :comment, url:"/comments", method: "POST" do |f|%>
   Content: <%=f.text_field :content%>
-  <%f.hidden_field :post_id, value:@post.id%>
+  <%f.hidden_field :post_id, value: "#{@post.id}"%>
   <%=f.submit %>
 <%end%>
 
