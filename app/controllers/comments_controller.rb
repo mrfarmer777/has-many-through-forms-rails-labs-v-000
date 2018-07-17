@@ -5,7 +5,6 @@ class CommentsController < ApplicationController
   def create
     #raise params.inspect
     comment = Comment.create(content:comment_params[:content],post_id:comment_params[:post_id], user_id:comment_params[:user_id])
-    raise comment.user.inspect
     redirect_to post_path(comment.post)
   end
 
