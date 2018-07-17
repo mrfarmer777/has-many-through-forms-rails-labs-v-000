@@ -43,7 +43,7 @@
 
 <h4>Active Users:</h4>
 <ul>
-  <% @post.users.uniq.each do |us|%>
+  <% @post.users.each do |us|%>
     <li>
       <%=us.username%> <%=us%>
     </li>
