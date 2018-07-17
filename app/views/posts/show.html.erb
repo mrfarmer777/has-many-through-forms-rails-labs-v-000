@@ -30,7 +30,7 @@
 
 <h4>Add a New Comment: </h4>
 
-<%=form_for :comment, url:"/comments", method: "POST" do |f|%>
+<%=form_for (@comment), url:"/comments", method: "POST" do |f|%>
   Content: <%=f.text_field :content%>
   <%f.hidden_field :comment[:post_id], :value=> @post.id%>
   <%=f.submit %>
