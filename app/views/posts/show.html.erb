@@ -30,13 +30,17 @@
 
 <h4>Add a New Comment: </h4>
 
-<%= form_for :comment, url:comments_path, method: :post do |f|%><br />
-  User: <%=f.collection_select :user_id, User.all, :id, :username%><br />
-  New User: <%=f.text_field :username%>
-  New User Email: <%=f.text_field :email%>
-  Content:<%=f.text_field :content%><br />
-
-  <%=f.submit%>
+<form action="/comments" method="POST">
+  <input type="text" name="content" id="comment_content" />
+  <select name="user_id">
+    <% for User.all.each do |user|%>
+      <option value="<%=user.id%>"><%=user.username%></option>
+    <%end%>
+    
+  </select>
+  
+    
+</form>
 <%end%>
 
 
